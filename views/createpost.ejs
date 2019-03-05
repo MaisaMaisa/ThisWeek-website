@@ -1,0 +1,93 @@
+<% include ./partials/loggednavbar%>
+<% include ./partials/sub-header%>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body id= "createbody">
+
+    <div class="hint">
+        <p>Through digital visual culture, our faces, bodies and lives are exposed and monitored like never before. This increased monitoring and breakdown of our bodies into digital data points is coupled with the deployment of AI technology including to create AI influencers, the normalization of algorithmic decision making, humanoid robots and sophisticated chat bots. This development raises a number of interesting issues. On the one hand, we are moving towards our digital identity being an acceptable ‘stand-in’ and ‘reliable’ model for our person. On the other hand bots are becoming more and more lifelike. How are our relations with AI and our habituation to bots advancing? Is there an acceptance of the ‘false’ and if so, what does this mean?What is the impact of these developments on our idea of physical integrity?</p>
+    </div>
+
+    <div class="fillin">
+        <form action="/createpost" method="post" id="fillin">
+                <label style="font-size: 50px;">Title of your message: </label> <br>
+                <textarea name="title" style="resize: none; width: 300px; height: 30px; font-size: 20px; outline: none;background-color:transparent; border-radius: 5px 60px 60px 5px;"></textarea>
+                <br>
+                <label id= "msg" style="font-size: 50px;">Message: </label><br>
+                <textarea id= "message" name="post" form="fillin" style="resize: none; width: 800px; height: 300px; font-size: 20px; outline: none; background-color:transparent; border-radius: 5px 60px 60px 5px;"></textarea>
+                <br>
+                <br>
+            
+                <input id = "postbtn"  class="submission" type="submit" value="send through"/>
+        </form>
+    </div>
+
+
+
+
+<div class="ad3">
+    <button id="close3" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+    <img src="/images/IMG_6234.JPG" width="300" height="200" style="border-radius:15px"/>
+    <br>
+    <br> 
+    <div class="text3">
+        <p>Artist: Nicolas Chuard</p>
+        <p>Title: <em> SNICKERS</em></p>
+        <p>Description: Life is like shopping in a supermarket - we enter, and one day we leave. 
+            We get a trolley, to purchase more than we need. We move counter-clockwise, to extend our life.
+            More is More and More is an installation by Swiss artist Nicolas Chuard inviting everyone to feel, touch, and play with our sensations and embrace our limits in an era where super powers are affordable to the masses.
+            Nicolas’ triptych aimes to highlight the three-dimensional structure of a society increasingly obsessed with individual performance, control, power and escape —a triangle to heal the restless.
+            The iconic Snickers bar is one of the three pillars, a shoot of energy on the form of a modern alchemist food; the beauty of its drape with the strenght of its propaganda.
+        </p>
+    </div>
+</div>
+
+<div class="ad2">
+    <button id="close2" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+    <img src="/images/natalka.png" width="300" height="200" style="border-radius:15px"/>
+    <br>
+    <br>
+    <div class="text2">
+        <p>Artist: Natalia Blahova</p>
+        <p>Title: <em> Object..</em></p>
+        <p>Description: ..that could be seen as nothing and as everything at the same time. 
+            Its position here is misleading and makes it look useless. 
+            Maybe as art is sometimes useless itself. 
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#msg").hover(function(){
+            $(".ad2").fadeIn(8000)
+        });
+
+        $("#close2").click(function(){
+            $(".ad2").hide();
+        });
+        
+        $(".ad3").fadeIn(9000); 
+
+        $( "#close3" ).click(function() {
+            $( ".ad3" ).animate({
+                width: "50%",
+                marginLeft: "0.3in",
+                fontSize: "3em",
+            }, 1500 );
+        $("#close3").click(function() {
+            $(".ad3").hide();
+            });
+        });
+    });
+
+</script> 
+</body>
+
+<% include ./partials/footer%>

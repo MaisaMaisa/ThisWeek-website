@@ -1,0 +1,59 @@
+<% include ./partials/header%>
+<% include ./partials/navbar%>
+
+<body id= "logbody">
+
+    <p id="intro" height= 300px width= 50px><em>is a website where this week's <u id= "topic">topic</u> is discussed.<br> 
+      The collected material can be used for research purposes, <br>
+      and the libraries are free and downloadable. <br> 
+      Users are welcome to participate or observe the discussions, <br>
+      comment on each other's posts,
+      and receive reactions back. <br>
+    </em></p>
+
+  <div class="image">
+    <img src="/images/back.jpg" width="300" height="200" style="border-radius:15px"/>
+  </div> 
+
+    <button class="open-button" onclick="openForm()">Login</button>
+    <div class="login-popup" id="myForm" style="font-family:Arial, Helvetica, sans-serif; text-align:right">
+      <form action="/login" method="post" class="form-container">
+        <div id= "log-input">
+            <label>Name:</label>
+            <input id = "name" type="text" name="name" />
+            <br>
+            <br>
+            <label>Password:</label>
+            <input id = "pass" type="password" name="pass" />
+        </div>
+        <div>
+            <input class="btn" type="submit" value="Log In"/>
+        </div>        
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    
+    <script type="text/javascript">
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+
+    $(document).ready(function() {
+
+      $("#intro").hide().fadeIn(9000);
+      
+      $("#topic").hover(function(){
+            $(".image").toggle();
+      }); 
+      
+
+
+      });
+
+  </script>
+
+<% include ./partials/footer%>

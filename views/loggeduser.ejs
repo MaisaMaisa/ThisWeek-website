@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/loggednavbar%>
+
+
+<head id = "maintxt">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<div class="announcement">
+    <h1>This week's topic is: <br><em>Digital persona</em></h1>
+    <p>The memory of your smartphone is often full. You keep receiving texts on Whatsapp, however you cannot access them because you’ve used up your phone’s memory. 
+        The phone keeps mocking you with notifications, not letting you access the sender’s information. What does this technological given tell us about the way we live?
+        The lesson the phone is trying to teach is that it doesn’t want to be filled with even more memories. Old ones will have to be wiped out first. 
+        The device says “no” to more input.
+    </p>
+
+    <p>
+        Multiple online platforms offer more memory to switch to and rely on, while our cameras are a trustworthy tool for the occasion. 
+        They provide services to capture objects, urban vibes, and stage new scenarios; their codes make the memories look more lively than the previous ones.  
+    </p>
+
+    <p>
+        These highly present blocks of memories we inhabit, have changed our sense of navigation. 
+        Following the map means checking every 7-12 seconds if you're still on the right path. 
+        Getting lost is not an option; virtual locations of other cities have already been explored. 
+        So you stay at home. 
+    </p>
+
+    <p><em>
+        Please, navigate through this website accordingly, to put some shape to the topic. 
+        Feel free to create posts, and be aware that all posts are comments-friendly. 
+        This means that you can comment on other posts as much as your posts can be commented on. 
+        The idea is to stretch the topic as much as possible. All data is public data.
+    <em>
+    </p>
+</div>
+
+
+<div class="ad1">
+    <button id="close1" style="float: right; background-color: transparent; color: white; border-radius:10px; outline: none">X</button>
+    <iframe src="https://player.vimeo.com/video/222982810" width="300" height="150" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <br>
+    <br>
+    <div class="text1">
+        <p>Artist: Roman Ermoalev</p>
+        <p>Title: <em>Holy Land</em></p>
+        <p>Description: Holy Land is a film flirtation with the Dutch history and its cultural codes also including an installation part. This project is an observation of a forgery Dutch "landscape" recreated as an attempt of summing-up the experience of being a part of this country. 
+        Combination of a different techniques such as 16mm film and digital media provides the better involvement into the situation of being placed in a foreign history.
+        </p>
+    </div>
+</div>
+
+
+<div class="ad6">
+        <button id="close6" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+        <img src="/images/skoke.png" width="200" height="300" style="border-radius:15px"/>
+        <img src="/images/skoke1.jpg" width="200" height="300" style="border-radius:15px"/>
+        <img src="/images/skoke3.jpg" width="400" height="300" style="border-radius:15px"/>
+        <br> 
+        <div class="text5">
+            <p>Artist: SKOKE </p>
+            <p>Title: <em> We are sorry to inform you THAT WE DID NOT SELECT YOUR PAINTING </em></p>
+            <p>SKOKE organized this play as a response to their situation.
+               SKOKE had to find an idea for a project <br>                  
+                    - couldn’t figure it out because of four different brains <br>
+                    - got rejected from this project <br>
+                    - and decided <br>
+                    to organize a play as a response to this situation.
+                <br>
+                <br>   
+                SKOKE took their cyclic, back and forth, overwhelming, contradictory, lovely, <br>
+                awkward but funnily rhythmed and confusing sessions of brainstorming as their main subject for this play.<br>
+                SKOKE exploded themselves in organizing a time and space unit to share the ridiculous aspect of their <br>
+                brainstorming with a tint of ridicule towards potential assignment givers and institutions.<br>
+                SKOKE shared “We are sorry to inform you THAT WE DID NOT SELECT YOUR PAINTING” <br>
+                on the 27th of March at the Vondelbunker in Amsterdam.
+            </p>
+        </div>
+</div>
+
+<div class="ad8" draggable="true">
+        <button id="close8" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+        <img src="/images/eszter.png" width="300" height="200" style="border-radius:15px"/>
+ 
+        <div class="text8">
+            <p>Artist: Eszter Kiss </p>
+            <p>Title: <em>People Wearing Clothes, White Ones.</em></p>
+        <p>
+            I started my project by handing out a pair of jeans, a t-shirt, and a sweater asking people to wear them for five days in a row. 
+            The white clothes served as blank canvases during the wearing experience, taking the imprint of their daily life and preserving each person's momentary actions. 
+        <br>
+        <br>
+            How do people deal with what they get? In what ways can a plain sweater influence somebody's daily life? 
+        <br>
+        <br>           
+            However, these pieces changed throughout the process and witnessed the wearer during the day, it took its own path and brought an unpredictable result. 
+            Receiving the shreds of evidence from real life let me able to create a parallel direction to the research in a more abstracted manner. 
+            I wanted to see if it’s possible to turn my observations into new archetypes which reflects on how the body and the garment influences each other and vice versa. 
+            Doing so I’m hoping to translate the imprint people left behind and enlarge these gestures.
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop()>150)
+            {
+            $('.ad1').fadeOut(1000);
+            }
+            else
+            {
+            $('.ad1').fadeIn(3000);
+     }
+ });
+
+        $( "#close1" ).click(function() {
+            $( ".ad8" ).animate({
+                left: "+=500px",
+            }, 1500 );
+        $("#close1").click(function() {
+            $(".ad1").hide();
+            });
+        });
+
+        $('#close6').on('click', function () {
+        $('.ad6').hide();
+        });
+
+        $('#close8').on('click', function () {
+        $('.ad8').hide();
+        });
+
+        $('.ad6').hide().fadeIn(30000);
+    });
+
+
+
+</script> 
+
+<% include ./partials/footer%>

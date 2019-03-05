@@ -1,0 +1,182 @@
+<% include ./partials/loggednavbar%>
+<% include ./partials/sub-header%>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body id="bodyall">
+        
+                <%if (content.length > 0) { %>
+                    <% for(let input of content) { %>
+                        <div class= "postcontent">
+                            <p id= "from-title"><b>From user:</b>
+                                <%=input.userId%>
+                            </p>
+                            <p id= "t-title"><b>Title:</b>
+                                <%=input.title%>
+                            </p>
+                
+                            <p id= "msg-title"><b>Message/post:</b>
+                                <p>
+                                <%=input.post%>
+                               </p>
+                            </p> 
+                        </div>
+
+                        <div class= "commentscontent">
+                            <p id= "comments-title"><b>Comments:</b>
+                                        <% for(let comment of input.comments) { %>
+                                            <ul style= "list-style-type:none;">
+                                            <%- JSON.stringify(comment.body) %>
+                                            </ul>
+                        
+                                        <% } %>
+                            </p>   
+
+                            <form id= "addcom" action="/allposts" method="post" style="float:right">
+                                <input type="hidden" name="postId" value="<%=input.id%>">
+                                <input id="inputForm" type='text' placeholder='Write a comment' name='Body'style="resize: none; width: 80%; height: 100px; font-size: 20px; outline: none; color:yellow">
+                                <input id="sad" type="submit" value="Post comment"/>
+                            </form>
+
+                        </div>
+                        <br><br>
+                    <% } %>
+                <% } %>
+        </ul>
+        
+                <%if (content.length == 0) { %>
+                <p>
+                    Emptiness
+                </p>
+                <% } %>
+
+            <div class="ad4">
+                <button id="close4" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+                <iframe src="https://player.vimeo.com/video/307285119" width="300" height="200" frameborder="0" allowfullscreen style="border-radius:15px"></iframe>
+                    <br>
+                    <br> 
+                    <div class="text4">
+                        <p>Artist: Han Yu</p>
+                        <p>Title: <em> The voice of 19 sheets</em></p>
+                        <p>“The voice of 19 sheets” is a profound work that is made by Han Yu. 
+                            Han is trying to represent and explain Article 19 of the Universal Declaration of Human Rights (Freedom of opinion and expression) to the public in two different ways: literal and figurative.
+                            For the choice of key material, Han decided to use white sheets. The reason was aimed to build a reference to the word “speech”. 
+                            As one of explanation from English dictionary, “speech” means a form of communication in spoken language. 
+                            We often see a presenter prepare his/her speech draft in paper or digital and a couple of sheets are in their hands or texts shown on laptop screen while they are giving a speech.
+                            As the most common and essential material in our daily lives, paper plays an important role. The right to express one’s opinion and expression freely is as fundamental as the role paper plays at our society. 
+                            The whole statement of Article 19 is being cut out words by words and sheets by sheets. 19 sheets per book and 35 hollow books in total are hanging through pipes in order. 
+                            The text is invisible, but we can clearly see every word. Freedom is intangible, but you have it all the time.
+                            The two electric fans below the words are blowing upwards the sentences and the paper is flipping under the action of the wind. 
+                            The wind of freedom and the power of language. Due to the wind, the sound of paper is uncontrollable and free. This is Han’s understanding of the Freedom of speech.
+                        </p>
+                    </div>
+            </div>
+
+            <div class="ad5">
+                    <button id="close5" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+                    <img src="/images/roma.JPG" width="300" height="200" style="border-radius:15px"/>
+                    <br>
+                    <br> 
+                    <div class="text5">
+                        <p>Artist: Roman Tkachenko </p>
+                        <p>Title: <em> Piss</em></p>
+                        <p>It is an exploration into public and semi-public urination, usually perceived as a rather male careless release, possibly extended to feelings of dominance, provocation and raising a public disgust. 
+                            We are looking at an installation that frames an action, which was completed just a few minutes ago : a man and woman urinating together. 
+                            A sense of intimacy is achieved by positioning male and female body at same eye level. What stays after the action is absorbed by the porous tiled surfaces: a fleeting memory of an equally shared pleasure.
+                            The chosen materials break away from the notion of defensive hygiene (represented here by the glazed tiled environment) letting the space rather remember and accept the human.
+                        </p>
+                    </div>
+            </div>
+
+            <div class="ad12">
+                <button id="close12" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+                <img src="/images/Boris.JPG" width="200" height="300" style="border-radius:15px"/>
+                <br>
+                <br> 
+                <div class="text12">
+                    <p>Artist: Boris Kollar </p>
+                    <p>Title: <em> Unspecified</em></p>
+                    <p>Do you consider a plant or a child to be a design of a man? 
+                        “It is not an object”, they would say, “It has a life of its own”. 
+                        But then, you are the one who take care of it, 
+                        who gives it water and who turns it towards the sun for it to grow. 
+                        I design.
+                        I cut a fabric then I stitch it, 
+                        I create a garment, which I eventually sell for it to leave my house and live its own life too. 
+                        “But it is an object”, they would say. 
+                        But then, is there a  difference between an object and a plant or a child?
+                    </p>
+                </div>
+            </div>
+
+            <div class="adclara">
+                    <button id="close10" style="float: right;background-color: transparent; border-radius:10px; outline: none">X</button>
+                    <img src="/images/clara.jpg" width="300" height="200" style="border-radius:15px"/>
+                    <br>
+                    <br> 
+                    <div class="text10">
+                        <p>Artist: Clara Pasteau, in collaboration with Kimberley Cosmilla and Beatriz Conefrey </p>
+                        <p>Title: <em> Skin Furniture </em></p>
+                        <p>
+                            The Skin Furniture was made to function as a surface for display.
+                            A disturbing piece that can adapt anywhere due to its thin latex skin. 
+                            Its rubber touch prevents objects from falling and with the help of the nipples and the shapes in it, anything can adapt. 
+                            Also seen as camouflage, or an intervention furniture, ready to action! 
+                            You can throw it anywhere and the nipples will fly and stick like crazy.
+                            The Skin Furniture is ready for any kind of actions. Disturbing to see but pleasing to touch.
+                        </p>
+                    </div>
+            </div>
+
+
+
+
+                
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $( "#close4" ).click(function() {
+            $( ".ad4" ).animate({
+                left: "+=800px",
+            }, 1500 );
+        $("#close4").click(function() {
+            $(".ad4").animate({
+                left: "-=800px",
+            }, 1500 );
+        $("#close4").click(function() {
+        $(".ad4").animate({
+            left: "+=500px",
+        }, 1500 );
+        $("#close4").click(function() {
+            $(".ad4").hide();
+            });;
+            });
+        });
+    });
+
+        $("#close5").click(function(){
+            $(".ad12").slideDown(5000);
+        $('#close5').on('click', function () {
+            $('.ad5').hide()
+            });
+        });
+    
+        $('#close12').on('click', function () {
+        $('.ad12').hide();
+        });
+
+        $( "#close10" ).click(function() {
+            $( ".adclara" ).animate({
+                left: "+=800px",
+            }, 1500 ).fadeOut(300);
+        });
+
+    });
+</script> 
+</body>
+
+<% include ./partials/footer%>

@@ -1,0 +1,37 @@
+<% include ./partials/header%>
+<% include ./partials/navbar%>
+
+<button class="open-button2" onclick="openForm2()">Register</button>
+<div class="register-popup" id="myForm2" style="font-family:Arial, Helvetica, sans-serif">
+  <form action="/register" method="post" class="form-container">
+    <div id= "reg-input">
+        <label>Name:</label>
+        <input id = "name" type="text" name="name" required/>
+        <br>
+        <br>
+        <label>email:</label>
+        <input id = "pass" type="email" name="email" required/>
+        <br>
+        <br>
+        <label>Password:</label>
+        <input id = "pass" type="password" name="pass" required/>
+
+    </div>
+    <div>
+        <input class="btn" type="submit" value="Register"/>
+    </div>        
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm2").style.display = "none";
+}
+</script>
+
+<% include ./partials/footer%>

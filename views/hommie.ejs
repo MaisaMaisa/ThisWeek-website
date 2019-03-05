@@ -1,0 +1,33 @@
+<% include ./partials/header%>
+
+<body id= "logbody">
+
+    <p id="intro" height= 300px width= 50px><em>is a website where this week's <u id= "topic">topic</u> is discussed.<br> 
+      The collected material can be used for research purposes, <br>
+      and the libraries are free and downloadable. <br> 
+      Users are welcome to participate or observe the discussions, <br>
+      comment on each other's posts,
+      and receive reactions back. <br>
+    </em></p>
+
+  <div class="image">
+    <img src="/images/back.jpg" width="300" height="200" style="border-radius:15px"/>
+  </div>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#intro").hide().fadeIn(9000);
+      
+      $("#topic").hover(function(){
+            $(".image").toggle();
+      }); 
+      
+
+
+      });
+
+  </script>
+<% include ./partials/navbar%>
+<% include ./partials/footer%>
